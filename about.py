@@ -1,4 +1,5 @@
 import streamlit as st
+import home
 def app():
     #st.header(':blue[About Us :]')
     st.markdown('# :blue[About :]')
@@ -20,3 +21,6 @@ def app():
                +' than these format will lead to error and you will don\'t get you required output you want.')
     
     st.markdown('#### :rainbow[Thank You]')
+
+    if st.button(':blue[Start App]'):
+        home.app()
