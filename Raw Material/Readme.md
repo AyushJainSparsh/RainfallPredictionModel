@@ -1,0 +1,1 @@
+Raw Material from which we get usable data like dataset which contains Eastern UP Climate details as Western UP Climate detail.
