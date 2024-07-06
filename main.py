@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-import home , about 
+import home , about , UPEast , UPWest
 
 class MultiApp:
     def __init__(self):
@@ -15,8 +15,8 @@ class MultiApp:
         with st.sidebar :
             app = option_menu(
                 menu_title = 'Rain Prediction' ,
-                options=['Home','About'] ,
-                icons = ['house-fill','info-circle-fill'],
+                options=['Home','About','UP East Climate','UP West Climate'] ,
+                icons = ['house-fill','info-circle-fill','cloud-lightning-rain-fill','cloud-lightning-rain-fill'],
                 menu_icon='cloud-rain-fill',
                 default_index=1,
                 styles = {
@@ -29,4 +29,8 @@ class MultiApp:
             home.app()
         if app == 'About':
             about.app()
+        if app == 'UP East Climate' :
+            UPEast.app()
+        if app == 'UP West Climate' :
+            UPWest.app()
     run()

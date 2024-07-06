@@ -1,22 +1,23 @@
 import streamlit as st
-import pickle as pkl
+import streamlit_option_menu as som
+
+import UPEast , UPWest
+
 
 def app():
-    st.header(':blue[UP west] :red[Rain Prediction model]')
-    value = st.text_input('Enter Annual Rainfall you want :')
-    if st.button('Predict Rainfall This Year') :
-        if value == '':
-            st.warning('Please Enter Annual Rainfall')
-        else :
-            try :
-                model = pkl.load(open('model.pkl','rb'))
-                value = float(value)
-                input = [[]]
-                input[0].append(value)
-                output = model.predict(input)
-                st.success('Rainfall in July :'+str(output[0][0]))
-                st.success('Rainfall in August    : '+str(output[0][1]))
-                st.success('Rainfall in September : '+str(output[0][2]))
-                st.success('Rainfall in October   : '+str(output[0][3]))
-            except :
-                st.warning('Enter Annual Rainfall in Decimal Format')
+    app = som.option_menu(
+        menu_title = 'Home :' ,
+        options=['Uttar Pradesh Eastern Climate','Uttar Pradesh Western Climate'] ,
+        icons = ['cloud-lightning-rain','cloud-lightning-rain'],
+        menu_icon='house-fill',
+        default_index=1,
+        styles = {
+            "Container":{'Padding':'5!important','background-color' : 'blue'},
+            'icon':{'color':'white','font-size' : '25px'},
+            'nav-link':{'color':'white','font-size':'20px','text-align':'left','margin':'0px','--hover-color':'blue'},
+            'nav-link-selected':{'background-color':'#02ab21'}}
+    )
+    if app == 'Uttar Pradesh Eastern Climate':
+        UPEast.app()
+    if app == 'Uttar Pradesh Western Climate':
+        UPWest.app()
