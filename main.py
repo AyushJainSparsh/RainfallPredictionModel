@@ -21,9 +21,9 @@ class MultiApp:
                 default_index=1,
                 styles = {
                     "Container":{'Padding':'5!important','background-color' : 'blue'},
-                    'icon':{'color':'white','font-size' : '25px'},
-                    'nav-link':{'color':'white','font-size':'20px','text-align':'left','margin':'0px','--hover-color':'blue'},
-                    'nav-link-selected':{'background-color':'#02ab21'}}
+                    'icon':{'font-size' : '25px'},
+                    'nav-link':{'font-size':'20px','text-align':'left','margin':'0px','--hover-color':'blue'},
+                    'nav-link-selected':{'background-color':'red'}}
             )
         if app == 'Home':
             home.app()
