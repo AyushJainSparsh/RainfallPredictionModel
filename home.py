@@ -10,7 +10,7 @@ def app():
         options=['Uttar Pradesh Eastern Climate','Uttar Pradesh Western Climate'] ,
         icons = ['cloud-lightning-rain','cloud-lightning-rain'],
         menu_icon='house-fill',
-        default_index=1,
+        default_index=0,
         styles = {
             "Container":{'Padding':'5!important','background-color' : 'blue'},
             'icon':{'font-size' : '25px'},
